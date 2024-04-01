@@ -44,9 +44,12 @@
 // require('dotenv').config();
 // const { MNEMONIC, PROJECT_ID } = process.env;
 
-// const HDWalletProvider = require('@truffle/hdwallet-provider');
+const HDWalletProvider = require('@truffle/hdwallet-provider');
 
 module.exports = {
+  // etherscan: {
+  //   apiKey: '9ET8JJ7GZS2EMDG6TUXJPAQUVVNR29DH2T'
+  // },
   /**
    * Networks define how you connect to your ethereum client and let you set the
    * defaults web3 uses to send transactions. If you don't specify one truffle
@@ -70,6 +73,14 @@ module.exports = {
       network_id: "*",
       gas: 6721975,
     },
+    sepolia: {
+      provider: () => new HDWalletProvider('bc9be38a8dd1ce48bdb8198dfb42e9a47de901bd2a3876a9b2cd048eb0e809b9', `https://eth-sepolia.g.alchemy.com/v2/5Rjg6ISKDHngwojE6cBaMGs4iQPSdyf2`),
+      network_id: 11155111, // Sepolia testnet network id
+      gas: 5500000, // Gas limit
+      confirmations: 2, // Number of confirmations to wait before deployment is considered successful
+      timeoutBlocks: 200, // Number of blocks before a deployment times out
+      skipDryRun: true,
+    }
     //
     // An additional network, but with some advanced options…
     // advanced: {
