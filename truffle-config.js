@@ -74,7 +74,7 @@ module.exports = {
       gas: 6721975,
     },
     sepolia: {
-      provider: () => new HDWalletProvider('bc9be38a8dd1ce48bdb8198dfb42e9a47de901bd2a3876a9b2cd048eb0e809b9', `https://eth-sepolia.g.alchemy.com/v2/5Rjg6ISKDHngwojE6cBaMGs4iQPSdyf2`),
+      provider: () => new HDWalletProvider('YOUR_WALLET_PRIVATE_KEY', `https://eth-sepolia.g.alchemy.com/v2/YOUR_API_KEY`),
       network_id: 11155111, // Sepolia testnet network id
       gas: 5500000, // Gas limit
       confirmations: 2, // Number of confirmations to wait before deployment is considered successful
